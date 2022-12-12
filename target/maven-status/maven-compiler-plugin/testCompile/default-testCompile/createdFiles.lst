@@ -1,0 +1,3 @@
+com\test\demo\IntegrationTestBase.class
+com\test\demo\SampleTestData.class
+com\test\demo\service\impl\ParcelLockerServiceImplTest.class
