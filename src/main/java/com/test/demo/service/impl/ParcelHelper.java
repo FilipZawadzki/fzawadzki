@@ -8,6 +8,7 @@ import com.test.demo.mapper.ParcelMapper;
 import com.test.demo.repository.DepositBoxRepository;
 import com.test.demo.repository.ParcelLockerRepository;
 import com.test.demo.repository.ParcelRepository;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -15,8 +16,9 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
-@AllArgsConstructor
 @Component
+@AllArgsConstructor
+@Transactional
 class ParcelHelper {
 
 

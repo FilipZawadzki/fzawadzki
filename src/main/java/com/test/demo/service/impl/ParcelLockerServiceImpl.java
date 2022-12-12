@@ -5,6 +5,7 @@ import com.test.demo.entity.ParcelLockerEntity;
 import com.test.demo.mapper.ParcelLockerMapper;
 import com.test.demo.repository.ParcelLockerRepository;
 import com.test.demo.service.ParcelLockerService;
+import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,7 @@ import java.util.Comparator;
 import java.util.List;
 
 @Service
+@Transactional
 @AllArgsConstructor
 class ParcelLockerServiceImpl implements ParcelLockerService {
 

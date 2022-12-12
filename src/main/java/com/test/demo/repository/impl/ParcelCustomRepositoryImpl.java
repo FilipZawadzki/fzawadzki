@@ -3,7 +3,6 @@ package com.test.demo.repository.impl;
 import com.test.demo.entity.ParcelStatus;
 import com.test.demo.repository.ParcelCustomRepository;
 import jakarta.persistence.EntityManager;
-import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 
 import javax.persistence.PersistenceContext;
@@ -18,7 +17,6 @@ class ParcelCustomRepositoryImpl implements ParcelCustomRepository {
     @PersistenceContext
     private final EntityManager em;
 
-    @Transactional
     @Override
     public int updateAllParcelsWhenStatusInParcelLockersIsLongerThanTwoDays() {
         var dateNow = LocalDateTime.now();

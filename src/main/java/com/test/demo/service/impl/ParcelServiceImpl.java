@@ -9,6 +9,7 @@ import com.test.demo.repository.ParcelLockerRepository;
 import com.test.demo.repository.ParcelRepository;
 import com.test.demo.service.ParcelLockerService;
 import com.test.demo.service.ParcelService;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
+@Transactional
 @AllArgsConstructor
 class ParcelServiceImpl implements ParcelService {
 
