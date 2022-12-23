@@ -2,6 +2,7 @@ package com.test.demo.service;
 
 import com.test.demo.dto.ParcelDto;
 import com.test.demo.entity.ParcelEntity;
+import com.test.demo.mail.Mail;
 
 import java.util.List;
 
@@ -47,6 +48,11 @@ public interface ParcelService {
      */
     void deleteParcel(Long parcelId);
 
+    /**
+     * Changes statuses of {@link ParcelEntity} in DB to return when they are prolonged in parcel locker
+     * for longer than 48h.
+     *
+     */
     int changeToReturnAfter48Hours();
 
 }

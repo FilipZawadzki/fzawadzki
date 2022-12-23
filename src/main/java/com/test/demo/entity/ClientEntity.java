@@ -24,4 +24,7 @@ public class ClientEntity extends AbstractEntity {
     @Column(nullable = false)
     private String phoneNumber;
 
+    @Column(nullable = false)
+    private String emailAddress;
+
 }

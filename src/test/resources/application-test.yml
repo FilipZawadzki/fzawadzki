@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: "sa"
+    password: "password"
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+  mail:
+    host: smtp.mailtrap.io
+    port: 2525
+    username: "614d6786aedcec"
+    password: "b9621795034755"
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+email:
+  delivered:
+    subject: "Parcel delivered"
+    message: "Parcel has been delivered to: %s"
+    from: "logistics@test.com"

@@ -5,6 +5,7 @@ import com.test.demo.entity.DepositBoxEntity;
 import com.test.demo.entity.ParcelEntity;
 import com.test.demo.entity.ParcelStatus;
 import com.test.demo.mapper.ParcelMapper;
+import com.test.demo.notification.NotificationServiceInternal;
 import com.test.demo.repository.DepositBoxRepository;
 import com.test.demo.repository.ParcelLockerRepository;
 import com.test.demo.repository.ParcelRepository;
@@ -27,6 +28,8 @@ class ParcelHelper {
     private final ParcelLockerRepository parcelLockerRepository;
 
     private final ParcelRepository parcelRepository;
+
+    private final NotificationServiceInternal notificationServiceInternal;
 
     boolean addedParcelToGivenParcelLocker(ParcelEntity parcel, Long parcelLockerId) {
         var freeDepositBox = findFreeDepositBoxInParcelLocker(parcelLockerId);
@@ -74,7 +77,12 @@ class ParcelHelper {
         if (result.isEmpty()) {
             return null;
         }
+        publishDeliveredMessageEvent(parcel.getId());
         return ParcelMapper.toDto(parcel);
+    }
+
+    private void publishDeliveredMessageEvent(Long parcelId) {
+        notificationServiceInternal.publishParcelDeliveredEvent(parcelId);
     }
 
 }

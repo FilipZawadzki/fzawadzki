@@ -3,7 +3,10 @@ package com.test.demo.service.impl;
 import com.test.demo.dto.ParcelDto;
 import com.test.demo.entity.ParcelEntity;
 import com.test.demo.entity.ParcelStatus;
+import com.test.demo.mail.Mail;
+import com.test.demo.mail.MailService;
 import com.test.demo.mapper.ParcelMapper;
+import com.test.demo.notification.ParcelDeliveredEvent;
 import com.test.demo.repository.ClientRepository;
 import com.test.demo.repository.ParcelLockerRepository;
 import com.test.demo.repository.ParcelRepository;
@@ -11,6 +14,8 @@ import com.test.demo.service.ParcelLockerService;
 import com.test.demo.service.ParcelService;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
+import org.springframework.context.ApplicationEvent;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -37,7 +42,7 @@ class ParcelServiceImpl implements ParcelService {
         parcelEntity.setReceiver(clientRepository.getReferenceById(parcelDto.getReceiverId()));
         parcelEntity.setSender(clientRepository.getReferenceById(parcelDto.getSenderId()));
         parcelEntity.setParcelSize(parcelDto.getParcelSize());
-        parcelEntity.setParcelLockerActual(parcelLockerRepository.getReferenceById(parcelDto.getParcelLockerWantedId()));
+        parcelEntity.setParcelLockerWanted(parcelLockerRepository.getReferenceById(parcelDto.getParcelLockerWantedId()));
         parcelEntity.setStatus(ParcelStatus.SENT);
         parcelEntity.setSentDate(LocalDateTime.now());
         parcelEntity = parcelRepository.save(parcelEntity);

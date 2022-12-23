@@ -1,6 +1,8 @@
 package com.test.demo.controller;
 
 import com.test.demo.dto.ParcelDto;
+import com.test.demo.mail.Mail;
+import com.test.demo.mail.MailService;
 import com.test.demo.service.ParcelService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -15,6 +17,7 @@ import java.util.List;
 class ParcelController {
 
     private final ParcelService parcelService;
+    private final MailService mailService;
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
@@ -24,13 +27,13 @@ class ParcelController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<ParcelDto> getParcelLockerById() {
+    public List<ParcelDto> getParcelById() {
         return parcelService.getAllParcels();
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ParcelDto createParcelLocker(@RequestBody @Valid ParcelDto parcelDto) {
+    public ParcelDto createParcel(@RequestBody @Valid ParcelDto parcelDto) {
         return parcelService.postParcel(parcelDto);
     }
 

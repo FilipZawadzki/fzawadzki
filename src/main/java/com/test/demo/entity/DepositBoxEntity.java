@@ -16,19 +16,13 @@ import java.util.List;
 public class DepositBoxEntity extends AbstractEntity {
 
     @ManyToOne
+    @JoinColumn(nullable = false)
     private ParcelLockerEntity parcelLocker;
 
-    @OneToMany(mappedBy = "depositBox", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "depositBox")
     private List<ParcelEntity> parcelEntities;
 
     @Column(columnDefinition = "Decimal (1,0) default '4'")
     private Long size;
 
-    public Long getSize() {
-        if (this.size == null) {
-            return 4L;
-        } else {
-            return this.size;
-        }
-    }
 }

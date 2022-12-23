@@ -46,6 +46,7 @@ public class SampleTestData {
         clientEntity.setName(UUID.randomUUID().toString());
         clientEntity.setLastName(UUID.randomUUID().toString());
         clientEntity.setPhoneNumber(UUID.randomUUID().toString());
+        clientEntity.setEmailAddress(UUID.randomUUID().toString());
         return clientEntity;
     }
 

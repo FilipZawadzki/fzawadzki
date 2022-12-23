@@ -1,7 +1,11 @@
 package com.test.demo.controller;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.test.demo.dto.DepositBoxDto;
 import com.test.demo.entity.DepositBoxEntity;
 import com.test.demo.repository.DepositBoxRepository;
+import com.test.demo.repository.ParcelLockerRepository;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -14,11 +18,16 @@ import java.util.List;
 class DepositBoxController {
 
     private final DepositBoxRepository depositBoxRepository;
+    private final ParcelLockerRepository parcelLockerRepository;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public DepositBoxEntity createDepositBox(@RequestBody DepositBoxEntity depositBox) {
-        return depositBoxRepository.save(depositBox);
+    public DepositBoxDto createDepositBox(@RequestBody @Valid DepositBoxDto depositBoxDto) {
+        DepositBoxEntity depositBox = new DepositBoxEntity();
+        depositBox.setParcelLocker(parcelLockerRepository.getReferenceById(depositBoxDto.getParcelLockerId()));
+        depositBox = depositBoxRepository.save(depositBox);
+        depositBoxDto.setId(depositBox.getId());
+        return depositBoxDto;
     }
 
     @DeleteMapping
