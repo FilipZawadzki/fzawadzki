@@ -11,3 +11,7 @@ a) post a parcel
 b) deliver a parcel
 c) change statuses of all parcels which have status 'in parcel locker' for 48h+
 
+To configure:
+change in .yml files desired properties for your own email server and credentials + db settings
+
+
