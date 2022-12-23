@@ -8,7 +8,7 @@ Parcel lockers have codes, post codes, addresses. Clients can send packages and 
 
 Service should be able to:
 a) post a parcel
-b) deliver a parcel
+b) deliver a parcel and send confirmation email to receiver
 c) change statuses of all parcels which have status 'in parcel locker' for 48h+
 
 To configure:
