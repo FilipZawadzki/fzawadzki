@@ -3,6 +3,7 @@ package com.test.demo.notification;
 import com.test.demo.dto.ParcelDto;
 import com.test.demo.entity.ParcelEntity;
 import com.test.demo.mail.Mail;
+import com.test.demo.mail.MailConfig;
 import com.test.demo.mail.MailService;
 import com.test.demo.repository.ParcelRepository;
 import jakarta.validation.constraints.NotNull;
@@ -23,22 +24,15 @@ class ParcelDeliveredListener implements ApplicationListener<ParcelDeliveredEven
 
     private final ParcelRepository parcelRepository;
 
-    @Value("${email.delivered.subject}")
-    private String subject;
-
-    @Value("${email.delivered.message}")
-    private String message;
-
-    @Value("${email.delivered.from}")
-    private String from;
+    private final MailConfig mailConfig;
 
     private Mail constructDeliveredMail(Long parcelId) {
         ParcelEntity parcel = parcelRepository.findById(parcelId).get();
         Mail mail = new Mail();
-        mail.setMessage(String.format(message, parcel.getParcelLockerWanted().getCode()));
-        mail.setSubject(subject);
+        mail.setMessage(String.format(mailConfig.getMessage(), parcel.getParcelLockerWanted().getCode()));
+        mail.setSubject(mailConfig.getSubject());
         mail.setTo(parcel.getReceiver().getEmailAddress());
-        mail.setFrom(from);
+        mail.setFrom(mailConfig.getFrom());
         return mail;
     }
 

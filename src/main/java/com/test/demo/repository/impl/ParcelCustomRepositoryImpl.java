@@ -19,7 +19,7 @@ class ParcelCustomRepositoryImpl implements ParcelCustomRepository {
 
     @Override
     public int updateAllParcelsWhenStatusInParcelLockersIsLongerThanTwoDays() {
-        var dateNow = LocalDateTime.now();
+        LocalDateTime dateNow = LocalDateTime.now();
         return em.createQuery(UPDATE_ALL_PARCELS_WHEN_STATUS_IN_PARCEL_LOCKER_LONGER_THAN_TWO_DAYS)
                 .setParameter("date", dateNow)
                 .setParameter("dateOfReturn", dateNow.minusHours(48))

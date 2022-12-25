@@ -1,10 +1,13 @@
 package com.test.demo.service.impl;
 
 import com.test.demo.IntegrationTestBase;
+import com.test.demo.entity.ParcelEntity;
 import com.test.demo.entity.ParcelLockerEntity;
 import com.test.demo.service.ParcelLockerService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
 
 import static com.test.demo.SampleTestData.parcelLocker;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -21,7 +24,7 @@ class ParcelLockerServiceImplTest extends IntegrationTestBase {
         ParcelLockerEntity pl2 = createParcelLocker(parcelLocker("54-235"));
         ParcelLockerEntity pl3 = createParcelLocker(parcelLocker("54-236"));
         //when
-        var results = parcelLockerService.getClosestParcelLockersToGivenParcelLocker(pl1.getId());
+        List<Long> results = parcelLockerService.getClosestParcelLockersToGivenParcelLocker(pl1.getId());
         //then
         assertThat(results)
                 .hasSize(2)
@@ -36,7 +39,7 @@ class ParcelLockerServiceImplTest extends IntegrationTestBase {
         ParcelLockerEntity pl2 = createParcelLocker(parcelLocker("54-235"));
         createParcelLocker(parcelLocker("53-236"));
         //when
-        var results = parcelLockerService.getClosestParcelLockersToGivenParcelLocker(pl1.getId());
+        List<Long> results = parcelLockerService.getClosestParcelLockersToGivenParcelLocker(pl1.getId());
         //then
         assertThat(results)
                 .hasSize(1)
@@ -51,7 +54,7 @@ class ParcelLockerServiceImplTest extends IntegrationTestBase {
         createParcelLocker(parcelLocker("53-235"));
         createParcelLocker(parcelLocker("53-236"));
         //when
-        var results = parcelLockerService.getClosestParcelLockersToGivenParcelLocker(pl1.getId());
+        List<Long> results = parcelLockerService.getClosestParcelLockersToGivenParcelLocker(pl1.getId());
         //then
         assertThat(results).isEmpty();
     }

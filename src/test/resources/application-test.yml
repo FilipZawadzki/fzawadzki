@@ -19,7 +19,6 @@ spring:
           starttls:
             enable: true
 email:
-  delivered:
-    subject: "Parcel delivered"
-    message: "Parcel has been delivered to: %s"
-    from: "logistics@test.com"
+  subject: "Parcel delivered"
+  message: "Parcel has been delivered to: %s"
+  from: "logistics@test.com"

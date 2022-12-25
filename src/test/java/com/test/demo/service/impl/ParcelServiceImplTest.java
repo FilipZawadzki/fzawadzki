@@ -35,7 +35,7 @@ class ParcelServiceImplTest extends IntegrationTestBase {
         createDepositBox(depositBox(pl1));
         ParcelEntity parcel1 = createParcel(parcel(receiver1, sender1, pl1, 1L));
         //when
-        var result = parcelService.deliverParcel(parcel1.getId());
+        ParcelDto result = parcelService.deliverParcel(parcel1.getId());
         //then
         assertThat(result)
                 .isNotNull()
@@ -60,7 +60,7 @@ class ParcelServiceImplTest extends IntegrationTestBase {
         parcelRepository.save(parcel2);
 
         //when
-        var result = parcelService.deliverParcel(parcel2.getId());
+        ParcelDto result = parcelService.deliverParcel(parcel2.getId());
         //then
         assertThat(result)
                 .isNotNull()
@@ -83,7 +83,7 @@ class ParcelServiceImplTest extends IntegrationTestBase {
         parcel2.setDepositBox(depositBox);
         parcelRepository.save(parcel2);
         //when
-        var result = parcelService.deliverParcel(parcel1.getId());
+        ParcelDto result = parcelService.deliverParcel(parcel1.getId());
         //then
         assertThat(result)
                 .isNotNull()
@@ -106,7 +106,7 @@ class ParcelServiceImplTest extends IntegrationTestBase {
         parcel2.setDepositBox(depositBox);
         parcelRepository.save(parcel2);
         //when
-        var result = parcelService.deliverParcel(parcel1.getId());
+        ParcelDto result = parcelService.deliverParcel(parcel1.getId());
         //then
         assertThat(result)
                 .isNotNull()
@@ -129,7 +129,7 @@ class ParcelServiceImplTest extends IntegrationTestBase {
         parcel2.setDepositBox(depositBox);
         parcelRepository.save(parcel2);
         //when
-        var result = parcelService.deliverParcel(parcel1.getId());
+        ParcelDto result = parcelService.deliverParcel(parcel1.getId());
         //then
         assertThat(result)
                 .isNotNull()
@@ -156,7 +156,7 @@ class ParcelServiceImplTest extends IntegrationTestBase {
         parcelRepository.save(parcel1);
         parcelRepository.save(parcel2);
         //when
-        var result = parcelService.deliverParcel(parcel3.getId());
+        ParcelDto result = parcelService.deliverParcel(parcel3.getId());
         //then
         assertThat(result)
                 .isNotNull()
@@ -183,7 +183,7 @@ class ParcelServiceImplTest extends IntegrationTestBase {
         parcelRepository.save(parcel2);
         parcelRepository.save(parcel3);
         //when
-        var result = parcelService.deliverParcel(parcel1.getId());
+        ParcelDto result = parcelService.deliverParcel(parcel1.getId());
         //then
         assertThat(result)
                 .isNotNull()
@@ -209,7 +209,7 @@ class ParcelServiceImplTest extends IntegrationTestBase {
         parcelRepository.save(parcel2);
         parcelRepository.save(parcel3);
         //when
-        var result = parcelService.changeToReturnAfter48Hours();
+        int result = parcelService.changeToReturnAfter48Hours();
         //then
         assertThat(result)
                 .isEqualTo(2);
