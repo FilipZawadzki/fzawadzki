@@ -1,3 +1,7 @@
+com\test\demo\service\impl\ParcelLockerServiceImplTest.class
+com\test\demo\service\impl\ParcelServiceImplTest.class
+com\test\demo\controller\ParcelControllerTest.class
 com\test\demo\IntegrationTestBase.class
 com\test\demo\SampleTestData.class
-com\test\demo\service\impl\ParcelLockerServiceImplTest.class
+com\test\demo\notification\ParcelDeliveredListenerTest.class
+com\test\demo\notification\NotificationServiceInternalTest.class

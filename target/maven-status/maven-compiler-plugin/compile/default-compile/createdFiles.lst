@@ -10,6 +10,7 @@ com\test\demo\entity\ClientEntity.class
 com\test\demo\entity\DepositBoxEntity.class
 com\test\demo\mail\impl\MailServiceImpl.class
 com\test\demo\mapper\ParcelLockerMapper.class
+META-INF\spring-configuration-metadata.json
 com\test\demo\repository\DepositBoxRepository.class
 com\test\demo\notification\ParcelDeliveredListener.class
 com\test\demo\notification\ParcelDeliveredEvent.class
