@@ -6,20 +6,17 @@ import com.test.demo.entity.ParcelLockerEntity;
 import com.test.demo.mail.Mail;
 import com.test.demo.mail.MailConfig;
 import com.test.demo.mail.MailService;
-import com.test.demo.mail.impl.MailServiceImpl;
 import com.test.demo.repository.ParcelRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.*;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.event.RecordApplicationEvents;
 
 import java.util.Optional;
 
 import static com.test.demo.SampleTestData.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
 @RecordApplicationEvents
@@ -32,9 +29,6 @@ class ParcelDeliveredListenerTest {
 
     @Mock
     private MailService mailService;
-
-    @Captor
-    private ArgumentCaptor<Mail> eventArgumentCaptor;
 
     @Mock
     private ParcelRepository parcelRepository;

@@ -6,7 +6,6 @@ import com.test.demo.entity.ClientEntity;
 import com.test.demo.entity.DepositBoxEntity;
 import com.test.demo.entity.ParcelEntity;
 import com.test.demo.entity.ParcelLockerEntity;
-import com.test.demo.repository.DepositBoxRepository;
 import com.test.demo.repository.ParcelRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +43,7 @@ class ParcelServiceImplTest extends IntegrationTestBase {
     }
 
     @Test
-    void shouldDeliverParcelToParcelLockerSubstitute_WhenParcelLockerWantedIsFull(){
+    void shouldDeliverParcelToParcelLockerSubstitute_WhenParcelLockerWantedIsFull() {
         //given
         ParcelLockerEntity plWanted = createParcelLocker(parcelLocker("54-234"));
         ParcelLockerEntity plSubstitute = createParcelLocker(parcelLocker("54-235"));

@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "9b4c8c13-0fc6-469b-a416-c3732474c4ac",
+		"name": "ParcelServicePreview",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24816115"
+	},
+	"item": [
+		{
+			"name": "ParcelLocker",
+			"item": [
+				{
+					"name": "getAllParcelLockers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/parcellocker",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"parcellocker"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createParcelLocker",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"postCode\": \"54-235\",\r\n    \"code\": \"WRO-01\",\r\n    \"address\": \"Wrocław 54-234 Polaka 24/3\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/parcellocker",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"parcellocker"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DepositBox",
+			"item": [
+				{
+					"name": "getAllDepositBoxes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/depositbox",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"depositbox"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createDepositBox",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"parcelLockerId\" : 1\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/depositbox",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"depositbox"
+							],
+							"query": [
+								{
+									"key": "parcelLockerId",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "getAllClients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/client",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createClient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/client",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"client"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Parcel",
+			"item": [
+				{
+					"name": "getAllParcels",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "createParcel",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sender\": 1,\r\n    \"receiver\": 1,\r\n    \"parcelLockerWanted\": 1,\r\n    \"parcelSize\": 1\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/parcel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"parcel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deliverParcel",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/parcel/deliver/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"parcel",
+								"deliver",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

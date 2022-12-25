@@ -14,4 +14,6 @@ c) change statuses of all parcels which have status 'in parcel locker' for 48h+
 To configure:
 change in .yml files desired properties for your own email server and credentials + db settings
 
+To test you can use PostMan. Exported collection is available in the main folder.
+
 

@@ -1,8 +1,5 @@
 package com.test.demo.notification;
 
-import com.test.demo.dto.ParcelDto;
-import com.test.demo.entity.ParcelEntity;
-import com.test.demo.mail.Mail;
 import lombok.Getter;
 import org.springframework.context.ApplicationEvent;
 

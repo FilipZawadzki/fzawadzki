@@ -8,12 +8,9 @@ import com.test.demo.repository.ClientRepository;
 import com.test.demo.repository.DepositBoxRepository;
 import com.test.demo.repository.ParcelLockerRepository;
 import com.test.demo.repository.ParcelRepository;
-import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 
 @ActiveProfiles("test")
@@ -33,7 +30,7 @@ public abstract class IntegrationTestBase {
     private ClientRepository clientRepository;
 
     @AfterEach
-    void cleanUpDb(){
+    void cleanUpDb() {
         parcelRepository.deleteAll();
         depositBoxRepository.deleteAll();
         clientRepository.deleteAll();

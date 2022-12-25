@@ -13,6 +13,9 @@ public class ParcelMapper {
         if (parcelEntity.getParcelLockerActual() != null) {
             parcelDto.setParcelLockerActualId(parcelEntity.getParcelLockerActual().getId());
         }
+        if (parcelEntity.getDepositBox() != null) {
+            parcelDto.setDepositBoxId(parcelEntity.getDepositBox().getId());
+        }
         parcelDto.setParcelStatus(parcelEntity.getStatus());
         parcelDto.setReceiverId(parcelEntity.getReceiver().getId());
         parcelDto.setSenderId(parcelEntity.getSender().getId());

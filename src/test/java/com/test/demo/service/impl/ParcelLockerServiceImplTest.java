@@ -1,7 +1,6 @@
 package com.test.demo.service.impl;
 
 import com.test.demo.IntegrationTestBase;
-import com.test.demo.entity.ParcelEntity;
 import com.test.demo.entity.ParcelLockerEntity;
 import com.test.demo.service.ParcelLockerService;
 import org.junit.jupiter.api.Test;

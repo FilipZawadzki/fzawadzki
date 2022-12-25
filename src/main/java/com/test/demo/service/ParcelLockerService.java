@@ -46,5 +46,4 @@ public interface ParcelLockerService {
     List<ParcelLockerDto> getAllParcelLockers();
 
 
-
 }

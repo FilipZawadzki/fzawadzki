@@ -1,21 +1,14 @@
 package com.test.demo.notification;
 
-import com.test.demo.dto.ParcelDto;
 import com.test.demo.entity.ParcelEntity;
 import com.test.demo.mail.Mail;
 import com.test.demo.mail.MailConfig;
 import com.test.demo.mail.MailService;
 import com.test.demo.repository.ParcelRepository;
-import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationListener;
-import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
-import java.util.Optional;
 @Component
 @RequiredArgsConstructor
 class ParcelDeliveredListener implements ApplicationListener<ParcelDeliveredEvent> {

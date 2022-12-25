@@ -1,6 +1,5 @@
 package com.test.demo;
 
-import com.mysql.cj.xdevapi.Client;
 import com.test.demo.entity.ClientEntity;
 import com.test.demo.entity.DepositBoxEntity;
 import com.test.demo.entity.ParcelEntity;

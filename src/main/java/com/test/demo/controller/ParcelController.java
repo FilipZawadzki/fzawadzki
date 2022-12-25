@@ -1,8 +1,6 @@
 package com.test.demo.controller;
 
 import com.test.demo.dto.ParcelDto;
-import com.test.demo.mail.Mail;
-import com.test.demo.mail.MailService;
 import com.test.demo.service.ParcelService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -17,7 +15,6 @@ import java.util.List;
 class ParcelController {
 
     private final ParcelService parcelService;
-    private final MailService mailService;
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
