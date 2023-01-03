@@ -12,6 +12,14 @@ jobs:
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     docker:
       - image: cimg/openjdk:17.0.5
+        environment:
+          JDBC_DATABSE_URL: jdbc:mysql://localhost:3306/mytestdb
+          JDBC_DATABASE_USERNAME: root
+          JDBC_DATABASE_PASSWORD: root
+
+      - image: circleci/mysql
+        environment: 
+          MYSQL_DATABASE: mytestdb 
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
