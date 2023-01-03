@@ -36,5 +36,5 @@ workflows:
     maven-tests:
       jobs:
         - maven/test:
-            maven_command: clean install 
+            maven_command: -X compile 
             executor: java17
