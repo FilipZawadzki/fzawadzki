@@ -1,0 +1,27 @@
+{
+  "groups": [
+    {
+      "name": "email",
+      "type": "com.test.demo.mail.MailConfig",
+      "sourceType": "com.test.demo.mail.MailConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "email.from",
+      "type": "java.lang.String",
+      "sourceType": "com.test.demo.mail.MailConfig"
+    },
+    {
+      "name": "email.message",
+      "type": "java.lang.String",
+      "sourceType": "com.test.demo.mail.MailConfig"
+    },
+    {
+      "name": "email.subject",
+      "type": "java.lang.String",
+      "sourceType": "com.test.demo.mail.MailConfig"
+    }
+  ],
+  "hints": []
+}

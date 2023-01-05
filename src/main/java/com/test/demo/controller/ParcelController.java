@@ -40,7 +40,7 @@ class ParcelController {
         parcelService.deleteParcel(parcelId);
     }
 
-    @PutMapping("/deliver/{id}")
+    @PutMapping("/delivered/{id}")
     @ResponseStatus(HttpStatus.OK)
     public ParcelDto deliverParcel(@PathVariable("id") Long parcelId) {
         return parcelService.deliverParcel(parcelId);

@@ -203,12 +203,12 @@
 					"response": []
 				},
 				{
-					"name": "deliverParcel",
+					"name": "deliveredParcel",
 					"request": {
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/parcel/deliver/1",
+							"raw": "http://localhost:8080/parcel/delivered/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -216,7 +216,7 @@
 							"port": "8080",
 							"path": [
 								"parcel",
-								"deliver",
+								"delivered",
 								"1"
 							]
 						}

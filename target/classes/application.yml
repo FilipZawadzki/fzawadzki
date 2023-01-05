@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/mytestdb
+    driver-class-name: com.mysql.jdbc.Driver
+    username: "root"
+    password: "Sasukes113"
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      ddl-auto: create-drop
+  mail:
+    host: smtp.mailtrap.io
+    port: 2525
+    username: "614d6786aedcec"
+    password: "b9621795034755"
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+email:
+  subject: "Parcel delivered"
+  message: "Parcel has been delivered to: %s"
+  from: "logistics@prod.com"

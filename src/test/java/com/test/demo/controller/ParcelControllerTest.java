@@ -67,7 +67,7 @@ class ParcelControllerTest extends IntegrationTestBase {
         ParcelEntity parcel = createParcel(parcel(receiver, sender, plWanted, 4L));
 
         //when + then
-        mockMvc.perform(MockMvcRequestBuilders.put(String.format("/parcel/deliver/%s", parcel.getId())))
+        mockMvc.perform(MockMvcRequestBuilders.put(String.format("/parcel/delivered/%s", parcel.getId())))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath(("$.id")).value(parcel.getId()))
                 .andExpect(jsonPath(("$.senderId")).value(sender.getId()))
